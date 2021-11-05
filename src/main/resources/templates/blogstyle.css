@@ -1,0 +1,16 @@
+.total{
+    float: left;
+    width: 30%;
+    height: auto;
+    background-color: aqua;
+}
+.newentry{
+    float: left;
+    width: 70%;
+    background-color: azure;
+}
+
+.blogentry{
+    height: 250px;
+    width: 70%;
+}

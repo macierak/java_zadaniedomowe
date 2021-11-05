@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kantorform</title>
+</head>
+<body>
+
+
+    <form method="post" th:object="${kantorData}">
+        <div class="form-group">
+            <label>
+                Podaj kwotę wejścia: 
+            </label> 
+            <input type="text" th:field="${kantorData.input}">
+        </div>
+        
+        <label>Wybierz walutę:</label>
+        <div class="form-group" >
+                        <input type="radio" name="waluta"
+                th:field="${kantorData.entry}"
+                th:value="GBP"
+                value="GBP">GBP
+
+            <input type="radio" name="waluta"
+                th:field="${kantorData.entry}"
+                th:value="USD"
+                value="USD">USD
+
+            <input type="radio" name="waluta"
+                th:field="${kantorData.entry}"
+                th:value="EUR"
+                value="EUR">EUR
+
+            <input type="radio" name="waluta"
+                th:field="${kantorData.entry}"
+                th:value="CHF"
+                value="CHF">CHF
+        </div>
+
+        <input type="submit", value="Przelicz">
+    </form>
+    
+</body>
+</html>

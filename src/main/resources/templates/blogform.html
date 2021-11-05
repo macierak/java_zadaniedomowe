@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div>
+        <div class="newentry">
+            
+            <form method = "post" th:object="${EntryReceiver}" th:action="@{/blog}">
+                <label><h1>Witaj Użytkowniku</h1></label>
+                <input th:field="*{Entry}">
+                <input type="submit">
+            </form>
+
+        </div>
+    
+        <div class="total">
+            <p th:text="'Ilość wszystkich wpisów: ' + ${entryCount}"></p>
+        </div>
+    
+        
+        <div class="userentries">
+            <h1>Wpisy użytkownika</h1>
+            <ul th:each="Entry : ${userentries}">
+                <li th:text="${Entry}"></li>
+            </ul>
+        </div>
+    </div>
+    
+</body>
+</html>
